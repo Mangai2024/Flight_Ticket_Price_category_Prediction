@@ -1,4 +1,4 @@
-**Flight Ticket Price Category Prediction**
+**Flight Ticket Price Prediction**
 I worked with the Flight Ticket Prediction Dataset, applying Regression, Classification, and Price Category Prediction approaches to analyze and model the data effectively.
 **Here Flight Ticket Price Category Prediction**
 
