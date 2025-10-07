@@ -25,7 +25,7 @@ Class 1: precision 0.89, recall 0.93, f1-score 0.91 (support 20003)
 
 Class 2: precision 0.89, recall 0.88, f1-score 0.88 (support 19998)
 
-Confusion matrix:
+**Confusion matrix:**
 
 [[19160    25   845]
  [    1 18628  1374]
@@ -47,7 +47,7 @@ Trains classifier(s) — RandomForest and XGBoost tested; XGBoost used for final
 
 Evaluates model with accuracy, classification report and confusion matrix.
 
-Why bin price into categories?
+**Why bin price into categories?**
 
 Converting continuous price → discrete bands (low/medium/high) turns this into a classification problem (useful when decision-makers care about ranges rather than exact price).
 
@@ -119,21 +119,21 @@ Suggested file structure
 ├─ requirements.txt
 └─ README.md
 
-Tips & notes (practical)
+**Tips & notes (practical)**
 
-Avoid leakage: Drop the original price column when training a classifier on price_category. Otherwise the model sees the true price and trivially learns the label.
+**Avoid leakage:** Drop the original price column when training a classifier on price_category. Otherwise the model sees the true price and trivially learns the label.
 
-qcut vs cut: pd.qcut makes equal-frequency bins — good when you want class balance. If many identical prices cause qcut errors, use pd.cut.
+**qcut vs cut:** pd.qcut makes equal-frequency bins — good when you want class balance. If many identical prices cause qcut errors, use pd.cut.
 
-Encoding: For tree models LabelEncoder is fine. For linear models use pd.get_dummies() (one-hot).
+**Encoding:** For tree models LabelEncoder is fine. For linear models use pd.get_dummies() (one-hot).
 
-Class mapping: LabelEncoder().classes_ shows string class order. The numeric mapping is produced by fit_transform. Use np.unique(y, return_counts=True) to verify classes are present.
+**Class mapping:** LabelEncoder().classes_ shows string class order. The numeric mapping is produced by fit_transform. Use np.unique(y, return_counts=True) to verify classes are present.
 
-Model tuning: Improve performance with hyperparameter tuning (RandomizedSearchCV / GridSearchCV) and try LightGBM or CatBoost for additional gains.
+**Model tuning:** Improve performance with hyperparameter tuning (RandomizedSearchCV / GridSearchCV) and try LightGBM or CatBoost for additional gains.
 
-Feature importance: Plot model.feature_importances_ to interpret which features drive predictions.
+**Feature importance:** Plot model.feature_importances_ to interpret which features drive predictions.
 
-How to explain in an interview (2–3 lines)
+**How to explain in an interview (2–3 lines)**
 
 “I converted continuous ticket prices into three quantile-based categories (low, medium, high) to make a robust classification pipeline. I dropped the original price to prevent leakage, encoded categorical features, and trained XGBoost — achieving ~92% accuracy with balanced per-class performance. I validated with confusion matrix and classification report.”
 
