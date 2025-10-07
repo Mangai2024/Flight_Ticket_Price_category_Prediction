@@ -1,5 +1,5 @@
 **Flight Ticket Price Prediction**
-I worked with the Flight Ticket Prediction Dataset, **applying Regression, Classification, and Price Category Prediction** approaches to analyze and model the data effectively.
+I worked with the Flight Ticket Prediction Dataset, **applying Regression, Classification with Class prediction(Business or Economy), and Price Category Prediction(low, Medium, High)** approaches to analyze and model the data effectively.
 **Here Flight Ticket Price Category Prediction**
 
 This project focuses on predicting the price category (Low, Medium, High) of flight tickets based on various flight features such as airline, source city, destination city, number of stops, duration, class, and days left before departure.
